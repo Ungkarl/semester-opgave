@@ -1,5 +1,5 @@
 import styles from './devAssignmentsNavigation.module.css';
-import DevAssignmentsNavBtn from './devAssignmentsNavBtn/devAssignmentsNavBtn.module';
+import DevAssignmentsNavBtn from './devAssignmentsNavBtn/devAssignmentsNavBtn';
 
 const DevAssignmentsNavigation = () => {
 

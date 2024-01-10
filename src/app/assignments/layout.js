@@ -1,5 +1,5 @@
 import styles from "./layout.module.css"
-import DevAssignmentsNavBtn from "@/components/devAssignmentsNavigation/devAssignmentsNavBtn/devAssignmentsNavBtn.module"
+import DevAssignmentsNavBtn from "@/components/devAssignmentsNavigation/devAssignmentsNavBtn/devAssignmentsNavBtn"
 
 export default function AssignmentsLayout({ children }) {
     return <section className={styles.layout}>
