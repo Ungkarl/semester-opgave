@@ -4,18 +4,27 @@ import styles from "./devActionbar.module.css"
 import { useEffect, useRef } from "react";
 
 //Definerer min funktion, med modtagne props
-const DevActionBar = ({setSizeFunction, size, config, setColorFunction }) => {
+const DevActionBar = ({setSizeFunction, size, color, config, setColorFunction }) => {
 
     //Opretter en ref til mit slider element
     const activeSlideRef = useRef(null);
+    const colorPicker = useRef(null)
 
     //useEffect hook, der opdaterer sliderens værdi, når størrelsen ændres
     useEffect(() => {
 
         let slider = activeSlideRef.current;
         slider.value = size;
+        
 
     }, [size])
+    useEffect(() => {
+
+        let colorPicked = activeSlideRef.current;
+        colorPicked.value = color;
+        
+
+    }, [color])
 
     //Renderet komponent
     return (
@@ -32,7 +41,7 @@ const DevActionBar = ({setSizeFunction, size, config, setColorFunction }) => {
     </span> 
     {/* Input til at vælge farve */}
     <span className={styles.btn} >
-    <input type="color" className={styles.color} onChange={(e) => setColorFunction(e.target.value)}></input>
+    <input ref={colorPicker} type="color" className={styles.color} defaultValue={color} onChange={(e) => setColorFunction(e.target.value)}></input>
     </span>
 
         </div>

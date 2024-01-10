@@ -18,13 +18,29 @@ import DevActionBar from '@/components/devActionbar/devActionbar';
 //Stylesheet import
 import styles from "./devicons.module.css"
 //useState hook import
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 //Definerer min funktion DevIcons
 const DevIcons = () => {
     //Opretter mine state variabler til størrelse og farve
-    const [size, setSize] = useState(50)
+    const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+    const generateRandomHexColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      };
+    const [size, setSize] = useState(50);
+
     const [color, setColor] = useState("#000000")
+    useEffect(() => {
+        //Opdaterer klientside størrelser
+        setColor(generateRandomHexColor)
+        setSize(generateRandomNumber(50, 150));
+      }, []); //Tomt afhængighedsarray, der sørger for den bare bliver kørt 1 gang når siden loades
     //Objekt, med styling til mine ikoner
     let style = { width: `${size}px`, height:`${size}px`, color:`${color}` }
     
@@ -53,7 +69,7 @@ const DevIcons = () => {
 
             </div>
              {/* Devactionbar, med tilhørende props */}
-            <DevActionBar setSizeFunction={setSize} size={size} config={config} setColorFunction={setColor}></DevActionBar>
+            <DevActionBar setSizeFunction={setSize} size={size} color={color} config={config} setColorFunction={setColor}></DevActionBar>
 
 
         </div>
