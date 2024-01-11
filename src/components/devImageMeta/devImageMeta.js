@@ -15,11 +15,11 @@ const DevImageMeta = ({content}) => {
     let style = active ? styles.active : '';
     const getSelectedInfo = (obj, n) => Object.fromEntries(Object.entries(obj || {}).slice(0, n));
 
-    // Brug getSelectedInfo for at få de første 5 informationer
+    // Bruger getSelectedInfo for at få de første 5 informationer
     const selectedImageInfo = getSelectedInfo(content.meta.image, 5);
     const selectedExifInfo = getSelectedInfo(content.meta.exif, 5);
 
-    // Template (benytter style, icon og content variablerne).
+  
     return <div className={`${styles.container} ${style}`}>
         <div className={styles.handle} onClick={() => setActive(!active)}>
             {icon} Print Meta
