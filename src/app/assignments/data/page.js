@@ -16,6 +16,8 @@ const Page = async () => {
             <h1>Hvert Enkelt Galleri</h1>
             {galleries.map((gallery, index) => {
             return <DevGalleryHero key={index} gallery={gallery} />
+
+            
 })}
         
         </main>

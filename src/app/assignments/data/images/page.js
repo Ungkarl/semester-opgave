@@ -17,7 +17,7 @@ const Page = async () => {
 
             <h1>Hvert Enkelt Billede</h1>
             {images.map((image, index) => {
-                return <DevGalleryImage key={index} image={image}></DevGalleryImage>
+                return <DevGalleryImage key={index} image={image} showMeta={true}></DevGalleryImage>
             })}
         </main>
     );

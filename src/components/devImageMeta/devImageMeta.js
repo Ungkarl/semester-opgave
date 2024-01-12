@@ -14,7 +14,7 @@ const DevImageMeta = ({content}) => {
   
     let style = active ? styles.active : '';
     const getSelectedInfo = (obj, n) => {
-        // Det jeg modtager, bliver enten til obj eller {}, hvis der intet modtages
+        // Det jeg modtager, bliver enten til obj(array) eller {}, hvis der intet modtages
         const entriesArray = Object.entries(obj || {});
        
         
@@ -31,7 +31,6 @@ const DevImageMeta = ({content}) => {
     //Kalder min getSelectedInfo funktion, med content(billede & meta), her sender jeg så kun .meta.image/exif med, og får de første 5 entries.
     const selectedImageInfo = getSelectedInfo(content.meta.image, 5);
     const selectedExifInfo = getSelectedInfo(content.meta.exif, 5);
-
     //Container, til accordions  
     return <div className={`${styles.container} ${style}`}>
         <div className={styles.handle} onClick={() => setActive(!active)}>
