@@ -1,4 +1,3 @@
-
 import dbConnect from "./db/dbConnect.mjs";
 import authorModel from "./db/models/author.model.mjs";
 import galleryModel from "./db/models/gallery.model.mjs";
@@ -26,6 +25,8 @@ export const fetchGalleries = async () => {
         console.log(error)
 
     }
+
+
 };
 
 /*
@@ -49,29 +50,6 @@ export const fetchGalleryById = async (name) => {
         console.log(error)
 
     }
-};
-
-/*
-
-    Get Authors
-
-*/
-export const fetchAuthors = async () => {
-
-    console.log('fetchAuthors')
-    try {
-
-        await dbConnect();
-        let result = await authorModel.find({});
-    
-        return JSON.parse(JSON.stringify(result))
-
-    } catch (error) {
-
-        console.log(error)
-
-    }
-
 };
 
 /*
@@ -103,13 +81,36 @@ export const fetchAuthorsByGalleryName = async (name) => {
     Get Author by name
 
 */
-export const fetchAuthorsByName = async (name) => {
+export const fetchAuthorByNicUrl = async (niceUrl) => {
 
-    console.log('fetchAuthorsByGalleryName', name)
+    console.log('fetchAuthorByNicUrl', niceUrl)
     try {
 
         await dbConnect();
-        let result = await authorModel.find({author: { $regex:name, $options: 'i' }});
+        let result = await authorModel.find({niceUrl: niceUrl});
+    
+        return JSON.parse(JSON.stringify(result[0]))
+
+    } catch (error) {
+
+        console.log(error)
+
+    }
+
+};
+
+/*
+
+    Get Authors
+
+*/
+export const fetchAuthors = async () => {
+
+    console.log('fetchAuthors')
+    try {
+
+        await dbConnect();
+        let result = await authorModel.find({});
     
         return JSON.parse(JSON.stringify(result))
 
@@ -133,7 +134,7 @@ export const fetchImagesForAuthor = async (author) => {
     try {
 
         await dbConnect();
-        let result = await imageModel.find({"author" :  { $regex:author, $options: 'i' } });
+        let result = await imageModel.find({"author" : { $regex:author, $options: 'i' } });
     
         return JSON.parse(JSON.stringify(result))
 

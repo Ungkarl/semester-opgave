@@ -11,6 +11,7 @@ export default function AssignmentsLayout({ children }) {
             <DevAssignmentsNavBtn link={'/assignments/data/authors'} title={'Authors'} />
             <DevAssignmentsNavBtn link={'/assignments/data/images'} title={'Images'} />
             <DevAssignmentsNavBtn link={'/assignments/data/portfolios'} title={'Portfolios'} />
+            <DevAssignmentsNavBtn link={'/galleries'} title={'Galleries'} />
             </div>
         </div>
         <div className={styles.content}>

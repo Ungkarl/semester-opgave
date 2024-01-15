@@ -1,13 +1,14 @@
 
 import styles from './devAuthorHero.module.css';
+import Link from 'next/link';
 const DevAuthorHero = ({author}) => {
+    let url = `/galleries/${author.gallery}/${author.niceUrl}`;
     return (
-        <>
             <div className={styles.hero}>
                 <div className={styles.content}>
                     <div className={styles.profile}><div>{author.author.split('')[0]}</div></div>
                     <div className={styles.text}>
-                        <h2>{author.author}</h2>
+                    <Link href={url}>{author.author}</Link>
                         <p>
                             {author.gallery}
                         </p>
@@ -16,7 +17,7 @@ const DevAuthorHero = ({author}) => {
                 
             </div>
             
-        </>
+        
     )
 };
 export default DevAuthorHero
