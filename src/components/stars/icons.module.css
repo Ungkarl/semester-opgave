@@ -1,0 +1,50 @@
+.container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.sky {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #05172f;
+    
+}
+
+.skyRow {
+    
+    width: 100%;
+display: flex;
+justify-content: space-around;
+
+color: yellow;
+}
+
+.clouds {
+    width: 100%;
+    height: 20vh;
+   
+    position: absolute;
+}
+.cloudsRow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 50%;
+
+}
+
+
+
+
+
+    
+

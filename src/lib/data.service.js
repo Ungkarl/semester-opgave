@@ -11,20 +11,21 @@ import imageModel from "./db/models/image.model.mjs";
 */
 export const fetchGalleries = async () => {
     
-    console.log('fetchGalleryById')
+    console.log('fetchGalleries')
 
     try {
 
         await dbConnect();
-        return await galleryModel.find({});
+
+        let result = await galleryModel.find({});
+
+        return JSON.parse(JSON.stringify(result))
 
     } catch (error) {
 
         console.log(error)
 
     }
-
-
 };
 
 /*
@@ -48,6 +49,29 @@ export const fetchGalleryById = async (name) => {
         console.log(error)
 
     }
+};
+
+/*
+
+    Get Authors
+
+*/
+export const fetchAuthors = async () => {
+
+    console.log('fetchAuthors')
+    try {
+
+        await dbConnect();
+        let result = await authorModel.find({});
+    
+        return JSON.parse(JSON.stringify(result))
+
+    } catch (error) {
+
+        console.log(error)
+
+    }
+
 };
 
 /*

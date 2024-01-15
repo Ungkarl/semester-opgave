@@ -162,9 +162,9 @@ console.log('Galleries', galleries)
 
 Skriv svaret herunder: (åbn i vscode)
 ```
-Galleri 1: 
-Galleri 2:
-console.log udskrives : (klient eller server).
+Galleri 1: obscura
+Galleri 2: umbra
+console.log udskrives : server.
 ```
 
 Data kan hentes og håndteres på flere måder. Men overordnet set vil man i next tale om `serverside` eller `clientside`. Vi vil løbende komme ind på forskellene og dette dokument vil som sådan ikke gå i dybden - men vi vil forklare hvornår vi gør det ene og det andet.
@@ -275,7 +275,7 @@ export default async function Page() {
 Skriv svaret herunder: (åbn i vscode)
 
 ```
-console.log udskrives : (klient eller server).
+console.log udskrives : klient.
 ```
 
 ### Afslutning af 1. del.

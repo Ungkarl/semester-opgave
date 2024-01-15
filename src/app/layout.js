@@ -1,3 +1,4 @@
+import Navigation from '@/components/navigation/navigation';
 import './globals.css'
 import { oswaldFont } from '@/utils/fonts';
 
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={oswaldFont.className}>
+        <Navigation />
         {children}
       </body>
     </html>
