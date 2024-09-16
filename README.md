@@ -1,48 +1,41 @@
-# MediaCollege Viborg
+## Start the project
 
-
-## Kom igang
-
-### 1. Hvis du ikke har installeret ``node_modules`` så kør kommandoen
+### 1. If you haven't installed `node_modules`, run the following command:
 
 ```bash
 npm install
 ```
 
-### 2. Dernæst skal vi tilføje data til databasen.
+### 2. Next, we need to add data to the database.
 
-Opret en `.env` fil i roden af projektet.
+Create a .env file in the root of the project.
 
-Indsæt følgende i filen.
+Insert the following into the file:
 
 ```bash
 MONGODB_URI=mongodb://127.0.0.1:27017/sem-galleries
 ```
-*(note: Selve mongo URI´en skulle gerne pege på din local MONGODB installation. Se eventuelt Mongo Compass)*
+(note: The MongoDB URI should ideally point to your local MongoDB installation. Refer to Mongo Compass if needed)
 
-Lav en kopi af filen og omdøb den til `.env.local` så du ender med at have to filer.
+Make a copy of the file and rename it to .env.local, so you end up with two files.
 
 
-Herefter kan du køre kommandoen:
+Then, you can run the following command:
 
 ```bash
 npm run seed
 ```
 
-Når denne kommando er kørt skal den **IKKE** køres igen - med mindre du sletter (dropper) databasen helt - så kan du køre seed igen.        
-*(note: Det må du gerne forsøge hvis du har lyst til at teste det.)*
+Once this command is executed, you DO NOT need to run it again—unless you completely delete (drop) the database, in which case you can run the seed command again.
+(note: Feel free to try this if you want to test it.)
 
 
-### 3. Start udvikling serveren.
+### 3. Start the development server.
 
 ```bash
 npm run dev
 ```
 
-### 4. Åbn siden
+### 4. Open the page.
 
-Åbn siden på ``http:localhost:3000`` - Eller læs i terminalen hvis det skulle være en anden port end `3000`
-
-### 5. Opgaver
-
-Vil være beskrevet i seperate dokumenter i mappen documentation.
+Open the page at http://localhost:3000—or check the terminal if it’s running on a different port than 3000.
